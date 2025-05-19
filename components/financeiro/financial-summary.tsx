@@ -49,7 +49,7 @@ export function FinancialSummary({ payments }: FinancialSummaryProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">R$ {total.toFixed(2)}</div>
+          <div className="text-2xl font-bold">AOA {total.toFixed(2)}</div>
           <p className="text-xs text-muted-foreground mt-1">
             Para o mês atual
           </p>
@@ -66,7 +66,7 @@ export function FinancialSummary({ payments }: FinancialSummaryProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">R$ {totalPaid.toFixed(2)}</div>
+          <div className="text-2xl font-bold">AOA {totalPaid.toFixed(2)}</div>
           <p className="text-xs text-muted-foreground mt-1">
             {Math.round((totalPaid / total) * 100)}% do total
           </p>
@@ -83,7 +83,7 @@ export function FinancialSummary({ payments }: FinancialSummaryProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">R$ {totalPending.toFixed(2)}</div>
+          <div className="text-2xl font-bold">AOA {totalPending.toFixed(2)}</div>
           <p className="text-xs text-muted-foreground mt-1">
             {Math.round((totalPending / total) * 100)}% do total
           </p>
@@ -100,7 +100,7 @@ export function FinancialSummary({ payments }: FinancialSummaryProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">R$ {totalOverdue.toFixed(2)}</div>
+          <div className="text-2xl font-bold">AOA {totalOverdue.toFixed(2)}</div>
           <p className="text-xs text-muted-foreground mt-1">
             {Math.round((totalOverdue / total) * 100)}% do total
           </p>
@@ -129,7 +129,7 @@ export function FinancialSummary({ payments }: FinancialSummaryProps) {
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value) => [`R$ ${Number(value).toFixed(2)}`, 'Valor']} />
+                <Tooltip formatter={(value) => [`AOA ${Number(value).toFixed(2)}`, 'Valor']} />
                 <Legend />
               </PieChart>
             </ResponsiveContainer>
@@ -146,19 +146,19 @@ export function FinancialSummary({ payments }: FinancialSummaryProps) {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <p className="text-sm font-medium">Receitas</p>
-                <div className="font-bold text-lg">R$ 45.000,00</div>
+                <div className="font-bold text-lg">AOA 45.000,00</div>
                 <p className="text-xs text-muted-foreground">Mensalidades e matrículas</p>
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium">Despesas</p>
-                <div className="font-bold text-lg">R$ 32.500,00</div>
+                <div className="font-bold text-lg">AOA 32.500,00</div>
                 <p className="text-xs text-muted-foreground">Salários e custos operacionais</p>
               </div>
             </div>
             <div className="border-t pt-4">
               <div className="flex justify-between items-center">
                 <p className="text-sm font-medium">Saldo</p>
-                <div className="font-bold text-lg text-green-600 dark:text-green-400">R$ 12.500,00</div>
+                <div className="font-bold text-lg text-green-600 dark:text-green-400">AOA 12.500,00</div>
               </div>
             </div>
           </div>

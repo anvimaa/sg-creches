@@ -110,7 +110,7 @@ export function PaymentsTable({ payments }: PaymentsTableProps) {
                   <TableCell>{payment.childName}</TableCell>
                   <TableCell>{payment.guardianName}</TableCell>
                   <TableCell>{payment.month}</TableCell>
-                  <TableCell>R$ {payment.value.toFixed(2)}</TableCell>
+                  <TableCell>AOA {payment.value.toFixed(2)}</TableCell>
                   <TableCell>{new Date(payment.dueDate).toLocaleDateString('pt-BR')}</TableCell>
                   <TableCell>{getStatusBadge(payment.status)}</TableCell>
                   <TableCell>

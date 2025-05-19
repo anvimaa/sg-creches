@@ -40,7 +40,7 @@ export default function DashboardPage() {
           value={4}
           icon={AlertCircle}
           variant="danger"
-          description="Total: R$ 4.000,00"
+          description="Total: AOA 4.000,00"
         />
       </div>
       

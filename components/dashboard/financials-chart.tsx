@@ -37,7 +37,7 @@ export function FinancialsChart() {
                 ))}
               </Pie>
               <Tooltip 
-                formatter={(value) => [`R$ ${value.toLocaleString('pt-BR')}`, 'Valor']}
+                formatter={(value) => [`AOA ${value.toLocaleString('pt-BR')}`, 'Valor']}
               />
               <Legend 
                 formatter={(value) => value} 
