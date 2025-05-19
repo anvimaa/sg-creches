@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Criança Feliz - Sistema de Gestão',
-  description: 'Sistema de gestão para creches infantis',
+  description: 'Sistema de gestão para creches infantis'
 };
 
 export default function RootLayout({

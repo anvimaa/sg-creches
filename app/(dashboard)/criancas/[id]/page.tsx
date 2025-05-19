@@ -8,13 +8,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ChildPage({ params }: { params: { id: string } }) {
+export default async function ChildPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const child = mockChildren.find(child => String(child.id) === params.id)
-  
+
   if (!child) {
     notFound()
   }
-  
+
   return (
     <div className="space-y-6">
       <div>
