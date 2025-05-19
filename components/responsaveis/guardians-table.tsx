@@ -21,6 +21,7 @@ import { Input } from '@/components/ui/input'
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { MoreHorizontal, Pencil, FileText, Trash, Mail, Phone } from 'lucide-react'
 import { mockChildren } from '@/lib/data/mock-data'
+import { ClientOnly } from '@/components/ui/client-only'
 
 export interface Guardian {
   id: string
@@ -97,11 +98,15 @@ export function GuardiansTable({ guardians }: GuardiansTableProps) {
                   <TableCell>
                     <div className="flex flex-col">
                       <div className="flex items-center text-xs">
-                        <Mail className="mr-1 h-3 w-3" />
+                        <ClientOnly>
+                          <Mail className="mr-1 h-3 w-3" />
+                        </ClientOnly>
                         {guardian.email}
                       </div>
                       <div className="flex items-center text-xs mt-1">
-                        <Phone className="mr-1 h-3 w-3" />
+                        <ClientOnly>
+                          <Phone className="mr-1 h-3 w-3" />
+                        </ClientOnly>
                         {guardian.phone}
                       </div>
                     </div>
@@ -112,20 +117,28 @@ export function GuardiansTable({ guardians }: GuardiansTableProps) {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon">
-                          <MoreHorizontal className="h-4 w-4" />
+                          <ClientOnly>
+                            <MoreHorizontal className="h-4 w-4" />
+                          </ClientOnly>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem onClick={() => router.push(`/responsaveis/${guardian.id}`)}>
-                          <FileText className="mr-2 h-4 w-4" />
+                          <ClientOnly>
+                            <FileText className="mr-2 h-4 w-4" />
+                          </ClientOnly>
                           <span>Ver Perfil</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem onClick={() => router.push(`/responsaveis/${guardian.id}/editar`)}>
-                          <Pencil className="mr-2 h-4 w-4" />
+                          <ClientOnly>
+                            <Pencil className="mr-2 h-4 w-4" />
+                          </ClientOnly>
                           <span>Editar</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem className="text-destructive">
-                          <Trash className="mr-2 h-4 w-4" />
+                          <ClientOnly>
+                            <Trash className="mr-2 h-4 w-4" />
+                          </ClientOnly>
                           <span>Excluir</span>
                         </DropdownMenuItem>
                       </DropdownMenuContent>

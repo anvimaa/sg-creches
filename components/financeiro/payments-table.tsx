@@ -28,7 +28,7 @@ interface Payment {
   value: number
   dueDate: string
   paymentDate: string | null
-  status: 'pago' | 'pendente' | 'atrasado'
+  status: string
 }
 
 interface PaymentsTableProps {

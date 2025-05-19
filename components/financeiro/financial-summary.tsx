@@ -7,7 +7,7 @@ import { DollarSign, TrendingUp, TrendingDown, Clock } from 'lucide-react'
 interface Payment {
   id: string
   value: number
-  status: 'pago' | 'pendente' | 'atrasado'
+  status:string
 }
 
 interface FinancialSummaryProps {

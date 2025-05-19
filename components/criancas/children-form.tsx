@@ -36,6 +36,7 @@ import { ptBR } from 'date-fns/locale'
 import { CalendarIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useToast } from '@/hooks/use-toast'
+import { ClientOnly } from '@/components/ui/client-only'
 
 const classrooms = [
   { id: '1', name: 'Berçário' },
@@ -138,7 +139,9 @@ export function ChildrenForm({ initialValues, isEditing = false }: ChildrenFormP
                               ) : (
                                 <span>Selecione uma data</span>
                               )}
-                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                              <ClientOnly>
+                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                              </ClientOnly>
                             </Button>
                           </FormControl>
                         </PopoverTrigger>

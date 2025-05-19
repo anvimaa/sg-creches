@@ -24,7 +24,7 @@ const timeSlots = [
   '17:30 - 18:00',
 ]
 
-const scheduleData = {
+const scheduleData:any = {
   'Berçário': {
     'Segunda-feira': {
       '07:30 - 08:00': 'Acolhimento',

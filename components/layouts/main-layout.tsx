@@ -18,7 +18,8 @@ export function MainLayout({ children }: MainLayoutProps) {
       <Sidebar />
       <div className={cn(
         "flex-1 transition-all duration-300 flex flex-col",
-        isOpen ? "lg:ml-64" : "lg:ml-20"
+        isOpen ? "lg:ml-64" : "lg:ml-20",
+        isOpen ? "max-lg:ml-[80px]" : "max-lg:ml-0" // Ajusta a margem esquerda em mobile quando aberto
       )}>
         <Header />
         <main className="flex-1 p-6 overflow-auto">

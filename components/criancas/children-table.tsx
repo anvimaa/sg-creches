@@ -29,6 +29,7 @@ import { MoreHorizontal, Pencil, FileText, Trash } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
+import { ClientOnly } from '@/components/ui/client-only'
 
 export interface Child {
   id: string
@@ -119,20 +120,28 @@ export function ChildrenTable({ children }: ChildrenTableProps) {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon">
-                          <MoreHorizontal className="h-4 w-4" />
+                          <ClientOnly>
+                            <MoreHorizontal className="h-4 w-4" />
+                          </ClientOnly>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem onClick={() => router.push(`/criancas/${child.id}`)}>
-                          <FileText className="mr-2 h-4 w-4" />
+                          <ClientOnly>
+                            <FileText className="mr-2 h-4 w-4" />
+                          </ClientOnly>
                           <span>Ver Perfil</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem onClick={() => router.push(`/criancas/${child.id}/editar`)}>
-                          <Pencil className="mr-2 h-4 w-4" />
+                          <ClientOnly>
+                            <Pencil className="mr-2 h-4 w-4" />
+                          </ClientOnly>
                           <span>Editar</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem className="text-destructive">
-                          <Trash className="mr-2 h-4 w-4" />
+                          <ClientOnly>
+                            <Trash className="mr-2 h-4 w-4" />
+                          </ClientOnly>
                           <span>Excluir</span>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
